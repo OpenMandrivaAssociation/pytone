@@ -1,6 +1,6 @@
 %define name	pytone
-%define version 2.3.0
-%define release %mkrel 2
+%define version 3.0.1
+%define release %mkrel 1
 
 Summary:	Mp3/ogg mixer for DJ's
 Name:		%name
@@ -9,11 +9,10 @@ Release:	%release
 Group:          Sound
 License:	GPL
 URL:		http://www.luga.de/pytone/
-# http://www.luga.de/pytone/download/PyTone-2.0.5.tar.gz
 Source:		http://www.luga.de/pytone/download/PyTone-%version.tar.bz2
 BuildRoot:	%_tmppath/%{name}-%{version}-%{release}-buildroot
 Requires:	pyogg pyvorbis pymad pyao
-BuildRequires:  python-devel >= 2.3
+BuildRequires:  python-devel
 BuildRequires:  libao-devel
 
 %description
@@ -110,8 +109,8 @@ rm -rf %buildroot
 %files -f PyTone.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING PKG-INFO README TODO
-%dir %_libdir/python%pyver/site-packages/%name
-%_libdir/python%pyver/site-packages/%name/*
+%dir %python_sitearch/%name
+%python_sitearch/%name/*
 %dir %_datadir/%name
 %_datadir/%name/pythonerc
 
