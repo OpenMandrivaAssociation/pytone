@@ -16,28 +16,22 @@ BuildRequires:  python-devel
 BuildRequires:  libao-devel
 
 %description
-
 PyTone is a music jukebox written in Python with a curses based
 GUI. While providing advanced features like crossfading and multiple
 players, special emphasis is put on ease of use, turning PyTone into an
 ideal jukebox system for use at parties.
 
-
 %prep
 %setup -q -n PyTone-%version
 
-
 %build
 %__python setup.py build_ext -i
-
 
 %install
 rm -rf   %buildroot
 # TODO try --prefix next time.
 %__python setup.py install --root %buildroot
-%__rm %buildroot/%_sysconfdir/pytonerc
 %__install conf/pytonerc -D %buildroot/%_datadir/%name/pythonerc
-
 
 # Lets make a wrapper.
 %__install -d %buildroot/%_bindir
@@ -101,16 +95,15 @@ EOF_rpm
 
 %find_lang PyTone
 
-
 %clean
 rm -rf %buildroot
-
 
 %files -f PyTone.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING PKG-INFO README TODO
 %dir %python_sitearch/%name
 %python_sitearch/%name/*
+%python_sitearch/*.egg-info
 %dir %_datadir/%name
 %_datadir/%name/pythonerc
 
