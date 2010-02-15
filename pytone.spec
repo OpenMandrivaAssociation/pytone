@@ -1,13 +1,13 @@
 %define name	pytone
-%define version 3.0.1
-%define release %mkrel 4
+%define version 3.0.2
+%define release %mkrel 1
 
 Summary:	Mp3/ogg mixer for DJ's
 Name:		%name
 Version:	%version
 Release:	%release
 Group:          Sound
-License:	GPL
+License:	GPLv2
 URL:		http://www.luga.de/pytone/
 Source:		http://www.luga.de/pytone/download/PyTone-%version.tar.bz2
 BuildRoot:	%_tmppath/%{name}-%{version}-%{release}-buildroot
