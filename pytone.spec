@@ -1,6 +1,6 @@
 %define name	pytone
 %define version 3.0.3
-%define release 1
+%define release 2
 
 Summary:	Mp3/ogg mixer for DJ's
 Name:		%name
