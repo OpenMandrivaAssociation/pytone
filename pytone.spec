@@ -8,7 +8,7 @@ Version:	%version
 Release:	%release
 Group:          Sound
 License:	GPLv2
-URL:		http://www.luga.de/pytone/
+URL:		https://www.luga.de/pytone/
 Source:		http://www.luga.de/pytone/download/PyTone-%version.tar.gz
 Requires:	pyogg pyvorbis pymad pyao
 BuildRequires:  python-devel
